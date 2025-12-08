@@ -1,0 +1,76 @@
+# 网站基本信息
+title: "王林杰教授课题组"
+description: "基因解码，产业赋能：聚焦山羊、绵羊遗传育种前沿，服务中国现代畜牧业"
+baseurl: "" # 如果部署在子目录，填写子目录名
+url: "https://fishandgoat.cloud" # 您的网站域名
+
+# 个人信息
+author:
+  name: "王林杰"
+  email: "wanglinjie@sicau.edu.cn"
+  title: "教授、博士生导师"
+  affiliation: "四川农业大学"
+  education:
+    - degree: "博士"
+      institution: "华中农业大学"
+      period: "2005年9月-2010年6月"
+    - degree: "学士"
+      institution: "河南农业大学"
+      period: "2001年9月-2005年6月"
+  experience:
+    - "2015年2月-2016年2月：美国威斯康星大学麦迪逊分校生物系访问学者（利用CRISPR/Cas9技术探究动物脂肪代谢机理）"
+    - "2012年1月-至今：四川农业大学动物科技学院，副教授/教授"
+    - "2010年7月-2011年12月：四川农业大学动物科技学院，讲师"
+  awards:
+    - "四川省科技进步二等奖（排名第2）《肉用山羊重要经济性状关键功能基因的发掘与应用》"
+    - "四川省科技进步三等奖（排名第2）《美姑山羊种质特性研究与示范应用》"
+  publications:
+    - "《美姑山羊科学养殖技术》（主编，四川科学技术出版社）"
+    - "《绵羊标准化规模养殖技术图册》（参编，中国农业出版社）"
+  positions:
+    - "四川省畜牧兽医学会养羊学分会常务理事"
+    - "四川省畜牧业协会羊业分会常务理事"
+    - "西南地区山羊育种创新联盟副秘书长"
+  courses:
+    - "本科生《草食动物生产学》"
+    - "研究生《草食动物遗传育种研究进展》"
+
+# 核心卖点
+highlights:
+  - title: "前沿性（Genetics）"
+    description: "利用基因组学、分子生物学等技术解决草食动物遗传育种的关键科学问题"
+  - title: "应用性（Industry）"
+    description: "研究成果直接服务于国家和地方的现代农业，有重大科研项目和产业示范基地作为支撑"
+  - title: "成就感（Awards）"
+    description: "课题组在研究和应用方面获得了省部级科技进步奖，证明了成果的质量和价值"
+
+# 导航菜单
+navigation:
+  - title: "首页"
+    url: "/"
+  - title: "研究方向"
+    url: "/research"
+  - title: "发表论文"
+    url: "/publications"
+  - title: "新闻动态"
+    url: "/news"
+  - title: "团队成员"
+    url: "/people"
+  - title: "导师介绍"
+    url: "/about"
+  - title: "加入我们"
+    url: "/join-us"
+  - title: "联系方式"
+    url: "/contact"
+
+# 主题设置
+theme: academic-pages
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# 其他设置
+markdown: kramdown
+highlighter: rouge
+timezone: Asia/Shanghai
+lang: zh-CN
