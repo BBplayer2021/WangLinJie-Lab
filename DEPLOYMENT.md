@@ -20,12 +20,16 @@
 1. 访问 [Netlify](https://www.netlify.com/) 并注册/登录
 2. 点击 "Add new site" → "Import an existing project"
 3. 选择 GitHub 并授权，选择您的仓库
-4. 配置构建设置：
-   - **Build command**: `bundle exec jekyll build`
-   - **Publish directory**: `_site`
-   - **Environment variables**: 
-     - `JEKYLL_ENV=production`
+4. Netlify 会自动检测 `netlify.toml` 配置文件，使用 Jekyll 插件自动构建
+   - 如果自动检测失败，手动配置：
+     - **Build command**: `gem install bundler -v 2.4.22 && bundle install && bundle exec jekyll build`
+     - **Publish directory**: `_site`
+     - **Environment variables**: 
+       - `JEKYLL_ENV=production`
+       - `RUBY_VERSION=3.1`
 5. 点击 "Deploy site"
+
+**注意**：如果遇到 Bundler 版本问题，Netlify 会自动使用 Jekyll 插件处理。
 
 ### 步骤 3：配置自定义域名
 
