@@ -43,11 +43,15 @@ bundle exec jekyll serve
 
 ## 部署
 
+**网站域名**：https://fishandgoat.cloud
+
 网站可以部署到：
-- GitHub Pages
-- Netlify
-- Vercel
-- 或其他静态网站托管服务
+- **Netlify**（推荐）- 最简单，自动 HTTPS，免费
+- **Vercel** - 快速部署，全球 CDN
+- **GitHub Pages** - 需要 GitHub Pro 或组织账户
+- 其他静态网站托管服务
+
+详细的部署指南请查看 [DEPLOYMENT.md](DEPLOYMENT.md)
 
 ## 更新内容
 
