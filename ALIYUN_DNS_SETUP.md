@@ -31,16 +31,18 @@
 ```
 记录类型：CNAME
 主机记录：@
-记录值：your-username.github.io（替换为您的 GitHub 用户名）
+记录值：bbplayer2021.github.io（或 BBplayer2021.github.io，DNS 会自动转换为小写）
 TTL：600（或默认值）
 ```
+
+**注意**：DNS 系统不区分大小写，输入 `BBplayer2021.github.io` 或 `bbplayer2021.github.io` 都可以，系统会自动转换为小写。这**不会影响** DNS 解析。
 
 **记录 2：www 子域名**
 
 ```
 记录类型：CNAME
 主机记录：www
-记录值：your-username.github.io（替换为您的 GitHub 用户名）
+记录值：bbplayer2021.github.io（或 BBplayer2021.github.io）
 TTL：600（或默认值）
 ```
 
@@ -236,8 +238,14 @@ nslookup fishandgoat.cloud 8.8.8.8
 
 | 记录类型 | 主机记录 | 记录值 | TTL |
 |---------|---------|--------|-----|
-| CNAME | @ | BBplayer2021.github.io | 600 |
-| CNAME | www | BBplayer2021.github.io | 600 |
+| CNAME | @ | bbplayer2021.github.io | 600 |
+| CNAME | www | bbplayer2021.github.io | 600 |
+
+**重要说明**：
+- DNS 系统**不区分大小写**
+- 输入 `BBplayer2021.github.io` 或 `bbplayer2021.github.io` 都可以
+- 系统会自动转换为小写显示（这是正常现象）
+- **不会影响** DNS 解析和网站访问
 
 ### 在 GitHub 中配置：
 
