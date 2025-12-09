@@ -46,12 +46,18 @@ bundle exec jekyll serve
 **网站域名**：https://fishandgoat.cloud
 
 网站可以部署到：
-- **Netlify**（推荐）- 最简单，自动 HTTPS，免费
+- **GitHub Pages**（推荐 ⭐）- 免费，自动 HTTPS，自动构建，支持自定义域名
+- **Netlify** - 简单，自动 HTTPS，免费
+- **阿里云服务器** - 完全控制，无流量限制，适合有服务器的用户
 - **Vercel** - 快速部署，全球 CDN
-- **GitHub Pages** - 需要 GitHub Pro 或组织账户
 - 其他静态网站托管服务
 
-详细的部署指南请查看 [DEPLOYMENT.md](DEPLOYMENT.md)
+详细的部署指南请查看：
+- [GITHUB_PAGES_DEPLOYMENT.md](GITHUB_PAGES_DEPLOYMENT.md) - **GitHub Pages 部署指南**（推荐 ⭐）
+- [DEPLOYMENT.md](DEPLOYMENT.md) - 所有部署方法
+- [QUICK_START_ALIYUN.md](QUICK_START_ALIYUN.md) - 阿里云 ECS 快速开始
+- [WORDPRESS_JEYLL_COEXIST.md](WORDPRESS_JEYLL_COEXIST.md) - WordPress 与 Jekyll 共存部署
+- [ALIYUN_DEPLOYMENT.md](ALIYUN_DEPLOYMENT.md) - 阿里云服务器详细部署指南
 
 ## 更新内容
 

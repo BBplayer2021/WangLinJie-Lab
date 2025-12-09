@@ -1,10 +1,18 @@
+# Netlify Jekyll 配置
+# 参考：https://digitzh.github.io/posts/Jekyll+GitHub%E6%88%96Netlify%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/
+# 根据 Netlify 官方 AI 建议：解决 Bundler 4.0 --path 标志问题
 [build]
+  # 使用新的 bundle config API 设置 path，避免 --path 标志
+  # 这样可以在构建命令中运行 bundle install，避免 Netlify 自动使用 --path
+  command = "bundle config set path '/opt/build/cache/bundle' && bundle install && bundle exec jekyll build"
   publish = "_site"
 
 [build.environment]
   JEKYLL_ENV = "production"
-  RUBY_VERSION = "3.1"
+  # 设置 Ruby 版本为 3.3.5（解决版本冲突问题）
+  RUBY_VERSION = "3.3.5"
 
-[[plugins]]
-  package = "@netlify/plugin-jekyll"
+# 备用方案：使用 Netlify Jekyll 插件
+# [[plugins]]
+#   package = "@netlify/plugin-jekyll"
 

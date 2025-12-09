@@ -2,6 +2,13 @@
 
 本指南将帮助您将网站部署到 **fishandgoat.cloud** 域名。
 
+## 部署方案选择
+
+- **GitHub Pages**（推荐 ⭐）：免费，自动 HTTPS，自动构建，支持自定义域名，使用 GitHub Actions
+- **Netlify**：简单，免费，自动 HTTPS，适合快速部署
+- **阿里云服务器**：完全控制，无流量限制，适合需要自定义配置
+- **Vercel**：类似 Netlify，全球 CDN
+
 ## 方法一：使用 Netlify（推荐，最简单）
 
 ### 步骤 1：准备代码仓库
