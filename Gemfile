@@ -1,21 +1,23 @@
 source "https://rubygems.org"
-# Hello! This is where you manage which Jekyll version is used to run.
-# When you want to use a different version, change it below, save the
-# file and run `bundle install`. Run Jekyll with `bundle exec`, like so:
-#
-#     bundle exec jekyll serve
-#
-# This will help ensure the proper Jekyll version is running.
-# Happy Jekylling!
-gem "jekyll", "~> 4.4.1"
-# This is the default theme for new Jekyll sites. You may change this to anything you like.
-gem "academic-pages", "~> 2.5"
-# If you want to use GitHub Pages, remove the "gem "jekyll"" above and
-# uncomment the line below. To upgrade, run `bundle update github-pages`.
-# gem "github-pages", group: :jekyll_plugins
-# If you have any plugins, put them here!
+
+# --- 核心修改部分 ---
+
+# 1. 移除对 jekyll 版本的直接引用
+# gem "jekyll", "~> 4.4.1" 
+
+# 2. 启用官方 github-pages gem
+# 这个 gem 包含了 GitHub Pages 允许的所有插件和 jekyll 版本
+gem "github-pages", group: :jekyll_plugins
+
+# --- 您的主题和插件设置 ---
+
+# 3. 移除 academic-pages gem (主题应该在 _config.yml 中通过 remote_theme 引用)
+# gem "academic-pages", "~> 2.5" 
+
+# 4. 保留您的其他插件（注意：只有白名单插件才生效）
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
+  # jekyll-seo-tag 是 GitHub Pages 官方白名单插件，不用在 Gemfile 中列出
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
