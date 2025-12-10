@@ -4,10 +4,13 @@ description: "基因解码，产业赋能：聚焦山羊、绵羊遗传育种前
 baseurl: "" # 如果部署在子目录，填写子目录名（GitHub Pages 使用根目录时留空）
 url: "https://fishandgoat.cloud" # 您的网站域名（GitHub Pages 会自动处理）
 
-# 个人信息
-author:
+# 个人信息（Minima 主题只使用简单的 author 配置）
+author: "王林杰"
+email: "wanglinjie@sicau.edu.cn"
+
+# 详细信息（用于其他页面，不显示在页脚）
+author_details:
   name: "王林杰"
-  email: "wanglinjie@sicau.edu.cn"
   title: "教授、博士生导师"
   affiliation: "四川农业大学"
   education:
