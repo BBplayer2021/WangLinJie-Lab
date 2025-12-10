@@ -4,8 +4,6 @@ title: 发表论文
 permalink: /publications/
 ---
 
-# 发表论文
-
 ## 代表性学术论文
 
 ### 2024年及以后
@@ -41,20 +39,16 @@ permalink: /publications/
 ### 2019年
 
 1. **Inhibition of GSK3β Reduces Ectopic Lipid Accumulation and Induces Autophagy by the AMPK Pathway in Goat Muscle Satellite Cells**  
-   *Cells*, 8, 1378.  
-   [DOI链接] | [PDF]
+   *Cells*, 8, 1378.
 
 2. **Genome-Wide Identification and Characterization of Long Noncoding RNAs of Brown to White Adipose Tissue Transformation in Goats**  
-   *Cells*, 8, 904.  
-   [DOI链接] | [PDF]
+   *Cells*, 8, 904.
 
 3. **Transcriptional Regulation of NAMPT Gene by Glycogen Synthase Kinase 3β in Goat Adipocytes**  
-   *DNA and Cell Biology*, 38(3), 229-235.  
-   [DOI链接] | [PDF]
+   *DNA and Cell Biology*, 38(3), 229-235.
 
 4. **Glycogen synthase kinase 3β (GSK3β) regulates the expression of MyHC2a in goat skeletal muscle satellite cells (SMSCs)**  
-   *Animal science Journal*, 90(8), 1042-1049.  
-   [DOI链接] | [PDF]
+   *Animal science Journal*, 90(8), 1042-1049.
 
 ---
 
