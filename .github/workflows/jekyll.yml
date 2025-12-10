@@ -23,13 +23,28 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1'
-          bundler-cache: true  # 启用缓存以加快构建速度
+          bundler-cache: false  # 禁用缓存，因为需要处理平台差异
+      - name: Fix Gemfile.lock for Linux
+        run: |
+          # 移除 Windows 特定的平台，让 bundle 在 Linux 环境中重新解析
+          if [ -f Gemfile.lock ]; then
+            # 使用 bundle 命令更新平台（如果可用）
+            bundle lock --remove-platform x64-mingw-ucrt 2>/dev/null || true
+            bundle lock --add-platform ruby 2>/dev/null || true
+            # 如果 bundle lock 失败，手动清理
+            if grep -q "x64-mingw-ucrt" Gemfile.lock; then
+              grep -v "x64-mingw-ucrt" Gemfile.lock > Gemfile.lock.tmp
+              awk 'BEGIN{in_platforms=0} /^PLATFORMS$/{in_platforms=1; print; print "  ruby"; next} in_platforms && /^[A-Z]/{in_platforms=0} in_platforms && /^  x64-mingw-ucrt$/{next} 1' Gemfile.lock.tmp > Gemfile.lock.new
+              mv Gemfile.lock.new Gemfile.lock
+              rm -f Gemfile.lock.tmp
+            fi
+          fi
       - name: Setup Jekyll
         run: |
           bundle config set --local deployment 'false'
           bundle install --jobs 4 --retry 3
       - name: Build with Jekyll
-        run: bundle exec jekyll build
+        run: bundle exec jekyll build --trace
         env:
           JEKYLL_ENV: production
       - name: Setup Pages

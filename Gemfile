@@ -17,6 +17,7 @@ gem "github-pages", group: :jekyll_plugins
 # 4. 保留您的其他插件（注意：只有白名单插件才生效）
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
+  # jekyll-remote-theme 已包含在 github-pages gem 中，无需单独声明
   # jekyll-seo-tag 是 GitHub Pages 官方白名单插件，不用在 Gemfile 中列出
 end
 
