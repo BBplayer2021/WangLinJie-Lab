@@ -1,9 +1,8 @@
-name: Jekyll site CI
+name: Deploy Jekyll Site to Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: ["main"] # 在 main 分支推送时触发
   workflow_dispatch:
 
 permissions:
@@ -20,33 +19,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ruby/setup-ruby@v1
+      # 1. Setup Ruby：使用 3.1 版本，并利用 bundler-cache
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1'
-          bundler-cache: false  # 禁用缓存，因为需要处理平台差异
-      - name: Fix Gemfile.lock for Linux
-        run: |
-          # 移除 Windows 特定的平台，让 bundle 在 Linux 环境中重新解析
-          if [ -f Gemfile.lock ]; then
-            # 使用 bundle 命令更新平台（如果可用）
-            bundle lock --remove-platform x64-mingw-ucrt 2>/dev/null || true
-            bundle lock --add-platform ruby 2>/dev/null || true
-            # 如果 bundle lock 失败，手动清理
-            if grep -q "x64-mingw-ucrt" Gemfile.lock; then
-              grep -v "x64-mingw-ucrt" Gemfile.lock > Gemfile.lock.tmp
-              awk 'BEGIN{in_platforms=0} /^PLATFORMS$/{in_platforms=1; print; print "  ruby"; next} in_platforms && /^[A-Z]/{in_platforms=0} in_platforms && /^  x64-mingw-ucrt$/{next} 1' Gemfile.lock.tmp > Gemfile.lock.new
-              mv Gemfile.lock.new Gemfile.lock
-              rm -f Gemfile.lock.tmp
-            fi
-          fi
-      - name: Setup Jekyll
-        run: |
-          bundle config set --local deployment 'false'
-          bundle install --jobs 4 --retry 3
+          bundler-cache: true  # 启用缓存，让它在 Linux 环境中自动处理依赖
+          
+      # 2. Install dependencies：如果 Gemfile.lock 没有平台锁定，这会很快
+      - name: Install dependencies
+        run: bundle install --jobs 4 --retry 3
+        
+      # 3. Build with Jekyll：使用修正后的主题名称进行构建
       - name: Build with Jekyll
-        run: bundle exec jekyll build --trace
+        run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
+          
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
