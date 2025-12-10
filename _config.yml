@@ -44,30 +44,30 @@ highlights:
   - title: "成就感（Awards）"
     description: "课题组在研究和应用方面获得了省部级科技进步奖，证明了成果的质量和价值"
 
-# 导航菜单
-navigation:
-  - title: "首页"
-    url: "/"
-  - title: "研究方向"
-    url: "/research"
-  - title: "发表论文"
-    url: "/publications"
-  - title: "新闻动态"
-    url: "/news"
-  - title: "团队成员"
-    url: "/people"
-  - title: "导师介绍"
-    url: "/about"
-  - title: "加入我们"
-    url: "/join-us"
-  - title: "联系方式"
-    url: "/contact"
+# 导航菜单（Minima 主题使用 header_pages）
+header_pages:
+  - research.markdown
+  - publications.markdown
+  - news.markdown
+  - people.markdown
+  - about.markdown
+  - join-us.markdown
+  - contact.markdown
 
 # 主题设置
 theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+# Minima 主题配置
+minima:
+  social_links:
+    email: wanglinjie@sicau.edu.cn
+  # 显示作者信息
+  show_excerpts: true
+  # 显示页脚
+  show_footer: true
 
 # 其他设置
 markdown: kramdown
