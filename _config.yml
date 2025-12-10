@@ -64,11 +64,10 @@ navigation:
     url: "/contact"
 
 # 主题设置
-remote_theme: academic-pages/academic-pages.github.io
+theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-remote-theme  # 必需：用于加载 remote_theme
 
 # 其他设置
 markdown: kramdown
