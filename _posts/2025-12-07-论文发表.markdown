@@ -1,9 +1,12 @@
 ---
 layout: post
 title: "最新成果发表于国际期刊 Cells"
-date: 2025-12-07 12:00:00 +0800
+date: 2025-01-01 00:00:00 +0800
+# 注意：此日期仅用于排序，不代表实际发表时间
+# 论文实际发表时间请查看论文详情
 categories: 论文发表
 excerpt: "最新成果《Inhibition of GSK3β Reduces Ectopic Lipid Accumulation...》发表于国际期刊 Cells。"
+show_date: false
 ---
 
 ## 【论文发表】
